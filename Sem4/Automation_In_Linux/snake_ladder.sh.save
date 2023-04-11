@@ -1,0 +1,33 @@
+snake=3
+ladder=3
+s_arr[0,0]=34
+s_arr[0,1]=10
+s_arr[1,0]=49
+s_arr[1,1]=22
+s_arr[2,0]=40
+s_arr[2,1]=30
+l_arr[0,0]=5
+l_arr[0,1]=35
+l_arr[1,0]=36
+l_arr[1,1]=44
+l_arr[2,0]=1
+l_arr[2,1]=48
+max=50
+current=0
+check=1
+while [ $check ]
+do
+echo "Current Position ->"
+echo $current
+echo "\n"
+echo "\nRotate the dice-:"
+read click
+play=2
+current=(($current+$play))
+if ( $current -gt $max )
+then 
+$current= (( $current-$play ))
+fi
+l_arr[0,0]=5
+
+

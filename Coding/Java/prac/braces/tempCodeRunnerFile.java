@@ -1,0 +1,1 @@
+if(s.charAt(i)=='}' || s.charAt(i)==']' || s.charAt(i)==')') return false;
