@@ -19,10 +19,10 @@ int binary(int x)
 int main()
 {
     long long int l=11,data=10101101101;
-    // cout<<"Enter length of data ->";
-    // cin>>l;
-    // cout<<"Enter data (in binary) ->";
-    // cin>>data;
+    cout<<"Enter length of data ->";
+    cin>>l;
+    cout<<"Enter data (in binary) ->";
+    cin>>data;
     int i=2,p=1;
     int max=0;
     cout<<"Data -> "<<data;

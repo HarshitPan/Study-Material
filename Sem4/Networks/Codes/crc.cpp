@@ -48,8 +48,12 @@ void remainder_xor(char data[],int len_data,char divisor[],int len_div,char rema
 
 int main()
 {
-    char data[]="1101100";
-    char divisor[]="1101";
+    char data[100]; //="1101100";
+    char divisor[100];  //="1101";
+    cout<<"Enter data ->";
+    cin>>data;
+    cout<<"Enter divisor ->";
+    cin>>divisor;
     int len_div=0,len_data=0;
     for(int i=0;divisor[i]!='\0';i++) len_div++;
     for(int i=0;data[i]!='\0';i++) len_data++;

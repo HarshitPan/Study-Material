@@ -102,7 +102,9 @@ int calCode(char data[][key+1],int length)
 
 int main()
 {
-    char data[]="1011010101110101";
+    char data[100];
+    cout<<"Enter data ->";
+    cin>>data;
     cout<<"Data is -> "<<data;
     int length=0;
     for(int i=0;data[i]!='\0';i++)length++;
