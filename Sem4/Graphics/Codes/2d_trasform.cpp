@@ -46,4 +46,5 @@ int main(int a,char ** b)
     glutDisplayFunc(disp);
     init();
     glutMainLoop();
+    return 0;
 }
