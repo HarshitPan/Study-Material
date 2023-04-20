@@ -8,9 +8,9 @@ int winx1=100,winy1=100,winx2=400,winy2=400;
 int total_vertex=4;
 int v[][2]={
     {50,50},
-    {200,200},
-    {100,500},
-    {500,100}
+    {350,350},
+    {500,100},
+    {100,500}
 };
 
 void init()
@@ -36,13 +36,13 @@ int and_operator(int a[],int b[])
 
 int yOnX(int x1,int y1,int x2,float m)
 {
-    cout<<"slope ->"<<x1<<" "<<y1<<" "<<x2<<" "<<float(y1)+m*float(x2-x1)<<endl;
+   // cout<<"slope ->"<<x1<<" "<<y1<<" "<<x2<<" "<<" "<<m<<" " <<float(y1)+m*float(x2-x1)<<endl;
     return float(y1)+m*float(x2-x1);
 }
 
-int xOnY(int x1,int y1,int y2,int m)
+int xOnY(int x1,int y1,int y2,float m)
 {
-    cout<<"slope ->"<<x1<<" "<<y1<<" "<<y2<<" "<<float(x1)+(float(y2-y1)/m)<<endl;
+   // cout<<"slope ->"<<x1<<" "<<y1<<" "<<y2<<" "<<" "<<m<<" "<<float(x1)+(float(y2-y1)/m)<<endl;
     return float(x1)+(float(y2-y1)/m);
 }
 
@@ -103,18 +103,19 @@ void onClick(int button,int state,int x,int y)
         //drawline(0,250,250,0);
         for(int i=0;i<total_vertex;i=i+2)
         {
-            cout<<i<<" Here..."<<endl;
+            //cout<<i<<" Here..."<<endl;
             int x1,y1,x2,y2;
-            cout<<v[i][0]<<" "<<v[i][1]<<" - ";
-            for(int j=0;j<4;j++)
-            {
-                cout<<pos[i][j]<<" "<<pos[i+1][j]<<endl;
-            }
+            //cout<<v[i][0]<<" "<<v[i][1]<<" - ";
+            // for(int j=0;j<4;j++)
+            // {
+            //     cout<<pos[i][j]<<" "<<pos[i+1][j]<<endl;
+            // }
             float m=float(v[i+1][1]-v[i][1])/float(v[i+1][0]-v[i][0]);
-            cout<<and_operator(pos[i],pos[i+1])<<endl;
+            float delx=v[i+1][0]-v[i][0],dely=v[i+1][1]-v[i][1];
+            //cout<<and_operator(pos[i],pos[i+1])<<endl;
             if(and_operator(pos[i],pos[i+1]))
             {
-                cout<<"Inside...";
+                //cout<<"Inside...";
                 if(v[i][0]>winx1 && v[i][0]<winx2 && v[i][1]>winy1 && v[i][1]<winy2)
                 {
                     x1=v[i][0];
@@ -124,6 +125,8 @@ void onClick(int button,int state,int x,int y)
                 {
                     
                     int temp=xOnY(v[i][0],v[i][1],winy1,m);
+                    if(delx>0 && temp>x2) temp=winx2+1; 
+                    if(delx<0 && temp<x2) temp=winx2+1; 
                     if(temp>=winx1 && temp<=winx2)
                     {
                         x1=temp;
@@ -131,6 +134,8 @@ void onClick(int button,int state,int x,int y)
                     }
                     else{
                         temp=xOnY(v[i][0],v[i][1],winy2,m);
+                        if(delx>0 && temp>x2) temp=winx2+1; 
+                        if(delx<0 && temp<x2) temp=winx2+1; 
                         if(temp>=winx1 && temp<=winx2)
                         {
                             x1=temp;
@@ -139,6 +144,8 @@ void onClick(int button,int state,int x,int y)
                         else 
                         {
                             temp=yOnX(v[i][0],v[i][1],winx1,m);
+                            if(dely>0 && temp>y2) temp=winy2+1; 
+                            if(dely<0 && temp<y2) temp=winy2+1; 
                             if(temp>=winy1 && temp<=winy2)
                             {
                                 x1=winx1;
@@ -147,6 +154,8 @@ void onClick(int button,int state,int x,int y)
                             else 
                             {
                                 temp=yOnX(v[i][0],v[i][1],winx2,m);
+                                if(dely>0 && temp>y2) temp=winy2+1; 
+                                if(dely<0 && temp<y2) temp=winy2+1; 
                                 if(temp>=winy1 && temp<=winy2)
                                 {
                                     x1=winx2;
@@ -209,7 +218,7 @@ void onClick(int button,int state,int x,int y)
                         }
                     }
                 }
-                cout<<"Drawline "<<x1<<" "<<y1<<" "<<x2<<" "<<y2<<endl;
+                //cout<<"Drawline "<<x1<<" "<<y1<<" "<<x2<<" "<<y2<<endl;
                 drawline(x1,y1,x2,y2);
             }
         }
