@@ -11,7 +11,7 @@ void init()
     glColor3ub(0,255,0);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(45.0f,float(width)/height,1.0f,100.0f);
+    gluPerspective(50.0f,float(width)/height,1.0f,100.0f);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     gluLookAt(1,2,-2,
