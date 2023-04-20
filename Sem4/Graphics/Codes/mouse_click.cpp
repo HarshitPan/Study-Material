@@ -1,10 +1,12 @@
 #include<GL/glut.h>
 #include<stdio.h>
 
-void myInit(void)
+void myInit()
 {
     glClearColor(1.0,1.0,1.0,0.0);
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear( GL_COLOR_BUFFER_BIT );
+    //glVertex2d(100,100);
+    //glClear(); -> blank screen
     glColor3d(0,0,0);
     glPointSize(4.0);
     glMatrixMode(GL_PROJECTION);
@@ -13,7 +15,7 @@ void myInit(void)
 }
 void onClick(int button,int state,int x,int y)
 {
-    glClear(GL_COLOR_BUFFER_BIT);
+    //glClear(GL_COLOR_BUFFER_BIT);
     if( button==GLUT_LEFT_BUTTON )
     {
         printf("%d and %d \n",x,y);
@@ -33,7 +35,7 @@ void disp(void)
 int main(int argc,char** argv)
 {
     glutInit(&argc,argv);
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB );
     glutInitWindowSize(500,500);
     glutInitWindowPosition(100,100);
     glutCreateWindow("Mouse Click");

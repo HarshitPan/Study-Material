@@ -3,7 +3,8 @@
 void draw_triangle()
 {
     glBegin(GL_POLYGON);
-    glColor3f(0.0, 1.0, 0.0);
+    //glColor3d(255.0, 255.0, 255.0);
+    glColor3ub(1,1,1);
     float p=sqrt(0.75);
     glVertex3f(0.0, 0.0, 0.0);
     glVertex3f(1.0, 0.0, 0.0);
@@ -50,13 +51,14 @@ void disp()
 
 int main(int argc, char** argv)
 {
-glutInit(&argc, argv);
-glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-glutInitWindowSize(1000, 1000);
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitWindowSize(1000, 1000);
 
-glutInitWindowPosition(100, 100);
-glutCreateWindow("triangles");
-glutDisplayFunc(disp);
-glutMainLoop();
-return 0;
+    glutInitWindowPosition(100, 100);
+    glutCreateWindow("triangles");
+    glutDisplayFunc(disp);
+    //disp();
+    glutMainLoop();
+    return 0;
 }

@@ -1,0 +1,2 @@
+a=$(top)
+echo $a
