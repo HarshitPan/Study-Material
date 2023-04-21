@@ -4,7 +4,7 @@ void draw_triangle()
 {
     glBegin(GL_POLYGON);
     //glColor3d(255.0, 255.0, 255.0);
-    glColor3ub(1,1,1);
+    glColor3ub(0,255,0);
     float p=sqrt(0.75);
     glVertex3f(0.0, 0.0, 0.0);
     glVertex3f(1.0, 0.0, 0.0);
@@ -18,7 +18,7 @@ void drawline(float x1,float y1,float x2,float y2)
 }
 void draw_name()
 {
-     glColor3f(1.0,1.0,1.0);
+     glColor3ub(0,0,255);
     // glLineWidth(4.1);
     // drawline(0.0,0.0,0.0,1.0);
     // drawline(0.1,0.0,0.1,0.1);

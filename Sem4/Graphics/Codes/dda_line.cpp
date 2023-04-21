@@ -2,7 +2,7 @@
 #include<stdio.h>
 void init(void)
 {
-    glClearColor(1.0,1.0,1.0,1.0);
+    glClearColor(0,0,0,1.0);
     glClear(GL_COLOR_BUFFER_BIT);
     glColor3d(0,0,0);
     glMatrixMode(GL_PROJECTION);
@@ -60,7 +60,7 @@ void disp()
         delx=steps/delx;
         dely=steps/dely;
         glClear(GL_COLOR_BUFFER_BIT );
-        glColor3d(1,0,0);
+        glColor3d(0,1,0);
         glBegin(GL_POINTS);
         for(int i=0;i<steps;i++)
         {

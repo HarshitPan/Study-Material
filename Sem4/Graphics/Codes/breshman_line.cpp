@@ -2,7 +2,7 @@
 #include<iostream>
 void init(void)
 {
-    glClearColor(1,1,1,1);
+    glClearColor(0,0,0,1);
     glClear(GL_COLOR_BUFFER_BIT);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -15,7 +15,7 @@ void disp(void)
     int dx=x2-x1,dy=y2-y1;
     int p=2*dx-dy;
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
-    glColor3d(1,0,0);
+    glColor3d(0,1,0);
     // glBegin(GL_POINTS);
     // glVertex2d(50,100);
     // glEnd();

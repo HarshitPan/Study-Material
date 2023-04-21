@@ -2,7 +2,7 @@
 
 void init()
 {
-    glClearColor(1,1,1,1);
+    glClearColor(0,0,0,1);
     glClear(GL_COLOR_BUFFER_BIT);
     glLoadIdentity();
     glMatrixMode(GL_PROJECTION);
@@ -12,7 +12,7 @@ void init()
 void disp()
 {
     glClear(GL_COLOR_BUFFER_BIT);
-    glColor3d(1,0,0);
+    glColor3d(0,1,0);
     int rx=300,ry=350;
     int y1=ry,x1=0;
     int p=(ry*ry)+((rx*rx)/4)-(ry*rx*rx);
