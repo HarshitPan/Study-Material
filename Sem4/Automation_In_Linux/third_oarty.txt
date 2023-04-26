@@ -1,0 +1,14 @@
+1 - logtail
+2 - sematext
+3 - datadog
+4 - new relic
+5 - dynatrace
+6 - dotcom monitor
+7 - checkmk
+8 - prometious
+9 - logic monitor
+
+count no of processes in your machine 
+sort them
+cut the pid column
+process netstat get tcp and udp connection seperately...
