@@ -2,9 +2,9 @@
 #include<stdio.h>
 void init(void)
 {
-    glClearColor(0,0,0,1.0);
+    glClearColor(1,1,1,1.0);
     glClear(GL_COLOR_BUFFER_BIT);
-    glColor3d(0,0,0);
+    glColor3d(1,1,1);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluOrtho2D(0,500,0,500);
@@ -60,7 +60,7 @@ void disp()
         delx=steps/delx;
         dely=steps/dely;
         glClear(GL_COLOR_BUFFER_BIT );
-        glColor3d(0,1,0);
+        glColor3d(0,0,1);
         glBegin(GL_POINTS);
         for(int i=0;i<steps;i++)
         {
@@ -89,7 +89,7 @@ int main(int argc,char** argv)
     glutInitDisplayMode(GLUT_SINGLE);
     glutInitWindowSize(500,500);
     glutInitWindowPosition(200,200);
-    glutCreateWindow("DDA Line Drawing Algorithm...");
+    glutCreateWindow("DDA Line Drawing Algorithm");
     
     glutDisplayFunc(disp);
    //   ``````````````````                                                                                                                                                                                                                           glutMouseFunc(onClick);

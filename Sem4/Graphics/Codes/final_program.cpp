@@ -134,15 +134,70 @@ void onClick(int button,int state,int x,int y)
 }
 void disp()
 {
+    // int x=0,y=0;
+    
+    // int cox=0,coy=0;
+    // int xo=500,yo=0;
+    // int pos=0,obstacle=500;
+    // int gap=4;
+    // while(true)
+    // {
+         glClear(GL_COLOR_BUFFER_BIT);
+    //     if(flag==1)
+    //     {
+    //         if(y>60) gap=(-1)*gap;
+    //         y+=gap;
+    //         draw_man(x,y+80,pos%8);
+    //         if(y==0)
+    //         {
+    //             gap=(-1)*gap;
+    //             flag=0;
+    //         }
+    //     }
+    //     else
+    //     {
+    //         draw_man(x,y+80,pos%8);
+    //         pos++;
+    //     }
+    //     drawline(500,0,-500,0);
+    //     draw_obstacle(xo,yo);
+    //     if(xo==x+60)
+    //     {
+    //         flag=1;
+    //     }
+
+        
+    //     glFlush();
+    //     system("sleep 0.02");
+        
+    //    // glutMouseFunc(onClick);
+        
+    //     xo-=4; 
+    //     if(xo<(-500 - 20)) xo=500+20;
+    // }
+}
+
+int main(int a,char** b)
+{
+
     int x=0,y=0;
     
     int cox=0,coy=0;
     int xo=500,yo=0;
     int pos=0,obstacle=500;
     int gap=4;
-    while(true)
-    {
-        glClear(GL_COLOR_BUFFER_BIT);
+
+    glutInit(&a,b);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB );
+    glutInitWindowSize(1000,1000);
+    glutCreateWindow("Graphic Run...");
+    glutDisplayFunc(disp);
+    init();
+    game:
+    // while(true)
+    // {
+        disp();
+        //glClear(GL_COLOR_BUFFER_BIT);
         if(flag==1)
         {
             if(y>60) gap=(-1)*gap;
@@ -169,23 +224,21 @@ void disp()
         
         glFlush();
         system("sleep 0.02");
-        
+        glutMouseFunc(onClick);
        // glutMouseFunc(onClick);
         
         xo-=4; 
         if(xo<(-500 - 20)) xo=500+20;
-    }
-}
 
-int main(int a,char** b)
-{
-    glutInit(&a,b);
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB );
-    glutInitWindowSize(1000,1000);
-    glutCreateWindow("Graphic Run...");
-    glutDisplayFunc(disp);
-    //disp();
-    init();
-    glutMainLoop();
+         
+
+        goto game;
+
+        glutMainLoop();
+    //}//disp();
+
+
+    
+   
     return 0;
 }
