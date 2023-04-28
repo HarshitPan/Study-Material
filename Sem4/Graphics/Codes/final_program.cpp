@@ -223,6 +223,7 @@ int main(int a,char** b)
 
         
         glFlush();
+        
         system("sleep 0.02");
         glutMouseFunc(onClick);
        // glutMouseFunc(onClick);
