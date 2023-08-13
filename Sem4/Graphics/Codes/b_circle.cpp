@@ -1,5 +1,8 @@
 #include<GL/glut.h>
 
+void boundary_fill(int,int);
+int b_color[3]={0,255,0},f_color[]={255,0,0};
+
 void init()
 {
     glClearColor(0,0,0,1);

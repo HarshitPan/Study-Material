@@ -13,7 +13,7 @@ def curve_back():
         #turtle.speed(5)
         turtle.left(1)
         turtle.backward(1)
-turtle.color("yellow", "black")
+turtle.color("red", "black")
 turtle.forward(100)
 turtle.right(90)
 turtle.forward(50)

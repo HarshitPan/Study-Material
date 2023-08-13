@@ -1,0 +1,5 @@
+main()
+{
+    close 1;
+    print "How R U";
+}
